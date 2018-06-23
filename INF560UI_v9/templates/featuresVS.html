@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Data Features Analysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src=" {{ url_for('static',filename='js/echarts.min.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/reset.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+<script type="text/javascript" src=" {{ url_for('static',filename='js-spec/featuresVS.js') }}"></script>
+
+
+</head>
+<body class="bgimage">
+    <div class="contents">
+        <div class="main_wrap" style="padding-left:100px;float: left;" >
+            <div class="crumbs" id="bre_left"><img src="/static/img/position.png" class="mr10"/><a href="/homepage">Home</a>&nbsp;>&nbsp;Features</div>
+        </div>
+        <div class="notice" style="margin-top:60px;">
+             <!-- iCon by oNlineWebFonts.Com -->
+              <img src="/static/img/icon-notice.png" width="16" height="16">
+              Top 20 clinical features influencing the identification of Potential Recipients.
+        </div>
+        <div id="featureBAR" style="height:850px;width: 1500px;"></div>
+    </div>
+</body>
+</html>

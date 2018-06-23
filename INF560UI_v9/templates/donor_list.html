@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>donor info list</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/reset.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+<script type="text/javascript" src=" {{ url_for('static',filename='js/papaparse.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/echarts.min.js') }}"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js-spec/donor_list.js') }}"></script>
+</head>
+
+<body class="bgimage">
+<form>
+    <div class="contents">
+          <div class="main_wrap" style="padding-left:100px;float: left; " >
+
+              <div class="crumbs" id="bre_left"><img src="/static/img/position.png" class="mr10"/><a href="/homepage">Home</a>&nbsp;>&nbsp;Matching</div>
+              <div class="notice">
+                 <!-- iCon by oNlineWebFonts.Com -->
+                  <img src="/static/img/icon-notice.png" width="16" height="16">
+                  To match every donor with top 5 potential recipient, upload the recipient information and select the desired meld score range.</div>
+              <div class="main">
+                      <div class="w100" id="search_area" >
+                          <span class="f14" >Upload Recipients Infomation</span>&nbsp;&nbsp;
+                          <input  id="fileRecipid" type="file" style=" border:0px;width:200px;"/>
+                          <a href="javascript:uploadRecip();" class="btn1">submit</a>
+                      </div>
+
+                      <div id="id1" class="title mb18" style="display: none">Recipient Infomation</div>
+                      <div class="lt-dsb">
+                      <p id="pid" style="font-size:14px" class="title w100" >MELD Score Range &nbsp;&nbsp;
+                          <select  id="selectbox_id" class="mr20">
+                            <option value="200">please select</option>
+                            <option value="20">0-20</option>
+                            <option value="40">20-40</option>
+                            <option value="60">40-60</option>
+                            <option value="80">60-80</option>
+                            <option value="100">80-100</option>
+                            <option value="101">>100</option>
+                           </select>
+                      </p>
+                      </div>
+                         <div id="id2" class="t_r table_wrap mt18" style="display: none">
+                              <table id ="title" class="t_r_title tt" border="0" cellspacing="0" cellpadding="0"   style="table-layout:fixed;" >
+                                  <thead id="recipienttable">
+
+                                  </thead>
+                              </table>
+                        </div>
+              </div>
+
+          		<!--Donor-->
+                <div class="notice" id="donnotice" style="display:none">
+                   <!-- iCon by oNlineWebFonts.Com -->
+                    <img src="/static/img/icon-notice.png" width="16" height="16">
+                    After uploading donor infomation, perform match, click 'check' to view the results
+                </div>
+            	<div class="main">
+                        <div class="w100" id="donorSearchid" style="display:none">
+                        <span class="f14" >Upload Donor Information</span>&nbsp;&nbsp;
+                        <input  id="fileid" type="file" style=" border:0px;width:200px;"/>
+                        <a href="javascript:upload();" class="btn1">submit</a>
+                        </div>
+
+                        <div id="id11" class="title mb18" style="display: none">Donor Information
+                            <a href="javascript:void();" onclick="doMatch()" class="btn1 f14 fb fr">Match</a>
+                        </div>
+                        <div class="t_r table_wrap mt18">
+                          		<table id ="tableid" class="t_r_title tt" border="0" cellspacing="0" cellpadding="0"   style="table-layout:fixed;display:none" >
+                                	<thead id ="donortable" >
+
+                                    </thead>
+                                </table>
+                       	  </div>
+        		</div>
+                <!-- Results -->
+                <div class="notice" id="resnotice" style="display:none">
+                   <!-- iCon by oNlineWebFonts.Com -->
+                    <img src="/static/img/icon-notice.png" width="16" height="16">
+                    In the results, every donor is matched with top 5 recipients <br/>
+                    <img src="/static/img/icon-notice.png" width="16" height="16">
+                    In the graph, the thickness of the recipient node represents the strength of matching score and thickness of the edge represents the strength of prediction score.
+                </div>
+                <div class="main">
+                    <div id="resultid" class="title mb18" style="display:none;">Final Results</div>
+                    <div class="t_r table_wrap mt18" style="position:relative">
+                        <table id ="resultsid" class="t_r_title tt" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;float:right;width: 45%;">
+                              <thead id ="resultsable" >
+
+                            </thead>
+                        </table>
+                        <div id="aboDIV" style=" background-color:white;float:left;border:1px solid #ccc;height:600px;width: 55%; display:None;position:absolute;" ></div>
+                   </div>
+
+               	</div>
+
+
+          </div>
+    </div>
+    <div id="spinner" class="spinner" style="display:none;">
+    <img id="img-spinner" src="/static/img/spinner.gif" style="width: 200px;height: 200px; "/>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	font-family:"Microsoft YaHei","SimSun",arial;
+	font-size:13px;
+	color:#111111;
+	/*position:relative;*/
+	min-width:1263px;
+	background:#fff;
+}
+
+img{ 
+	vertical-align:middle;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+a, a:link, a:visited {
+
+	selector-dummy : expression(this.hideFocus=true);
+	text-decoration:none;
+	 -webkit-transition: all 0.3s ease-in-out;
+	 -moz-transition: all 0.3s ease-in-out;
+	 -o-transition: all 0.3s ease-in-out;
+	 transition: all 0.3s ease-in-out;
+}
+a:hover{
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+table{width:100%;}
+table,th,td {
+	border-collapse:collapse;
+	cellpadding:0;
+	border:0;
+}
+
+
+.fl{ float:left;}
+.fr{ float:right;}
+
+.cb{ clear:both;}
+
+.clear{zoom:1;}
+.clear:after{content:'';display:block;clear:both;}
+
+select,input,textarea{ color:#111111; width:100px; background:#fbfcfe; border:1px solid #dfe1e3; padding-left:10px;
+						/*解决input和select不等宽问预1�7*/ box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+select{height:30px;line-height: 30px; vertical-align:middle;}
+input[type="text"]{ height:30px; line-height:30px;}
+input[type="radio"]{ width:auto; border:0;}
+input[type="checkbox"]{ width:auto; border:0;}
